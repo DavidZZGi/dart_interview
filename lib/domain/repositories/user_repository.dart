@@ -2,8 +2,8 @@ import 'package:dart_interview/app/utils/util_preferences.dart';
 import 'package:dart_interview/data/entities/user.dart';
 import 'package:dart_interview/data/services/user_service.dart';
 
+//User funtionalities are defined here in UserRepository
 class UserRepository implements UserService {
-  // ignore: prefer_typing_uninitialized_variables
   late final UtilPreferences prefs;
   UserRepository({required this.prefs});
   @override
