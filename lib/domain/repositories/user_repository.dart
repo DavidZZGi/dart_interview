@@ -1,15 +1,16 @@
+import 'package:dart_interview/app/utils/util_preferences.dart';
 import 'package:dart_interview/data/entities/user.dart';
 import 'package:dart_interview/data/services/user_service.dart';
 
 class UserRepository implements UserService {
   // ignore: prefer_typing_uninitialized_variables
-  late final prefs;
-  UserRepository({this.prefs});
+  late final UtilPreferences prefs;
+  UserRepository({required this.prefs});
   @override
   User getCurrentUser() {
-    final username = prefs.getUserName;
-    final email = prefs.getUserEmail;
-    final password = prefs.getPassword;
+    final username = prefs.getUserName ?? '';
+    final email = prefs.getUserEmail ?? '';
+    final password = prefs.getPassword ?? '';
 
     return User(username: username, email: email, password: password);
   }
