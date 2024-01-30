@@ -18,9 +18,6 @@ void main() {
     WidgetsFlutterBinding.ensureInitialized();
     sharedPreferences = MockUtilPreferences();
     await sharedPreferences.initPrefs();
-    sharedPreferences.setUserName = 'example_user';
-    sharedPreferences.setUserEmail = 'example_user@gmail.com';
-    sharedPreferences.setPassword = 'password';
     userProvider = UserProvider();
     user = User(
         email: 'example_user@gmail.com',
@@ -46,6 +43,11 @@ void main() {
       expect(userProvider.currentUser!.email, '');
     });
   });
+
+  //this test is failing  because of a preferences
+  //initialization issue, apperently is bieng made
+  //in await sharedPreferences.initPrefs();
+  //but it's not working properly
   group('UserRepository', () {
     test('Save and get user data', () {
       userRepository.setCurrentUser(user);
