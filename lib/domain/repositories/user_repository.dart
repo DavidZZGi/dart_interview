@@ -45,10 +45,7 @@ class UserRepository implements UserService {
 
   @override
   bool checkUserAccount() {
-    if (prefs.getPassword != null &&
-        prefs.getUserEmail != null &&
-        prefs.getPassword != '' &&
-        prefs.getUserEmail != '') {
+    if (prefs.getPassword != null && prefs.getUserEmail != null) {
       return true;
     }
     return false;

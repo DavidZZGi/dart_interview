@@ -119,7 +119,7 @@ class LoginScreenState extends State<LoginScreen> {
                   style: const TextStyle(color: Colors.black, fontSize: 18),
                   children: <TextSpan>[
                     TextSpan(
-                      text: 'Create account',
+                      text: 'Sign Up',
                       style: const TextStyle(color: Colors.blue, fontSize: 18),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
